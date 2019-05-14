@@ -40,7 +40,7 @@ $ sudo python setup.py install
 O módulo beautytext é composto apenas por uma classe homônima. A descrição dos atributos e métodos podem ser encontrada no próprio arquivo `beautytext/BeautyText.py`. A classe possibilita a implementação das funcionalidades por terceiros, sendo recomendado importá-la como
 
 ```
-from BeautyText import BeautyText
+from beautytext.BeautyText import BeautyText
 ```
 
 
