@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 #
-"""
-TESTE
-
-"""
 import argparse, sys
 from crawlers.RedditPrinter import RedditPrinter
 
