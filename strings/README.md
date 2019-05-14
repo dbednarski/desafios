@@ -1,35 +1,125 @@
-# Desafio 1: Strings
+# FITTEXT
 
-Após ler o coding style do kernel Linux, você descobre a mágica que é
-ter linhas de código com no máximo 80 caracteres cada uma.
+Este é um pacote usado para a formatação de textos - em especial, limitação de caracteres por linhas. É composto por composto por um módulo Python `BeautyText` e por um script executável que o implementa.
 
-Assim, você decide que de hoje em diante seus e-mails enviados também
-seguirão um padrão parecido e resolve desenvolver um plugin para te ajudar
-com isso. Contudo, seu plugin aceitará no máximo 40 caracteres por linha.
+### Estrutura de diretórios
 
-Implemente uma função que receba:
-1. um texto qualquer
-2. um limite de comprimento
+* `beautytext`: diretório do módulo BeautyText
+* `scripts` : diretório do script de implementação
+* `examples`: arquivos exemplos para testes.
 
-e seja capaz de gerar os outputs dos desafios abaixo.
 
-## Exemplo input
 
-`In the beginning God created the heavens and the earth. Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.`
+## Instalação
 
-`And God said, "Let there be light," and there was light. God saw that the light was good, and he separated the light from the darkness. God called the light "day," and the darkness he called "night." And there was evening, and there was morning - the first day.`
 
-O texto deve ser parametrizável e se quiser, pode utilizar um texto de input de sua preferência.
+Primeiramente, escolha se deseja instalar localmente (apenas para seu usuário) ou em todo o sistema. Abra a janela de um terminal e, a partir do diretório raiz deste pacote, digite, para instalar localmente:
 
-### Parte 1 (Básico) - limite 40 caracteres
-Você deve seguir o exemplo de output [deste arquivo](https://github.com/idwall/desafios/blob/master/strings/output_parte1.txt), onde basta o texto possuir, no máximo, 40 caracteres por linha. As palavras não podem ser quebradas no meio.
+```
+$ python setup.py install --user
+```
 
-### Parte 2 (Intermediário) - limite 40 caracteres
-O exemplo de output está [neste arquivo](https://github.com/idwall/desafios/blob/master/strings/output-parte2.txt), onde além de o arquivo possuir, no máximo, 40 caracteres por linha, o texto deve estar **justificado**.
+Para instalar em todo o sistema:
 
-### Dicas
-- Existe um template para projetos em Java ;)
+```
+$ sudo python setup.py install
+```
 
-### Extras
+### Requisitos de instalação
 
-- Parametrização da quantidade de caracteres por linha.
+* Python > 2.7
+* [setuptools](https://pypi.org/project/setuptools)
+* [numpy](https://www.numpy.org/)
+
+
+
+# O pacote
+
+## Módulo beautytext
+
+O módulo beautytext é composto apenas por uma classe homônima. A descrição dos atributos e métodos podem ser encontrada no próprio arquivo `beautytext/BeautyText.py`. A classe possibilita a implementação das funcionalidades por terceiros, sendo recomendado importá-la como
+
+```
+from BeautyText import BeautyText
+```
+
+
+## Script fitText.py
+
+O script `fitText.py` é uma implementação do módulo que lê um arquivo de texto e o imprime formatado no terminal com um limite máximo de caracteres por linha. Ele pode ser chamado de qualquer local através com a sintaxe:
+
+```
+fitText.py [-h] [-j] [-n <num_char>] <file>
+```
+
+* Parâmetro obrigatório:
+    * `<file>`: caminho para o arquivo de entrada com o texto a ser editado.
+
+* Parâmetros opcionais:
+    * `-h`, `--help`: exibe mensagem de ajuda do programa
+    * `-j`, `--justify`: habilita o texto justificado
+    * `-n <num_char>`, `--num_char <num_char>`: número máximo de caracteres em cada linha (padrão: 40)
+
+### Status de saída
+
+Ao finalizado o script, é retornado um código padrão de status para o sistema:
+
+* 0: caso o processamento tenha sido efetuado com sucesso.
+* 1: caso tenha ocorrido algum erro.
+
+
+
+## Usabilidade
+
+Tanto os métodos `getBeautyText()` e `saveBeautyText()`, quanto para o script `fitText.py` só funcionarão corretamente se as seguintes observações forem levadas em conta:
+
+* Os parágrafos devem ser separados no arquivo por uma linha em branco. Apenas uma quebra de linha é tratada como continuação do mesmo parágrafo.
+* A barra invertida procedida por um espaço ("\ ") pode ser usada para explicitar que conteúdos que não devem ser separados de linha. Exemplo:
+    > Pelo Teorema de Pitágoras, a soma dos quadrados dos catetos é igual ao quadrado da hipotenusa, ou seja, a²\ =\ b²\ +\ c².
+  previne que a fórmula matemática se separe em duas linhas. O resultado fica:
+    > Pelo Teorema de Pitágoras, a soma dos
+    > quadrados  dos  catetos  é  igual  ao
+    > quadrado   da  hipotenusa,  ou  seja,
+    > a²\ =\ b²\ +\ c².
+
+
+# Testes
+
+Após a instalação, execute os dois testes a seguir.
+
+
+### Teste 1
+
+Rode dentro do diretório raiz o seguinte código:
+
+```
+fitText.py examples/input.txt
+```
+
+O resultado deve ser igual ao arquivo `examples/output1.txt`.
+
+
+### Teste 2
+
+Rode dentro do diretório raiz o seguinte código:
+
+```
+fitText.py -j examples/input.txt
+```
+
+O resultado deve ser igual ao arquivo `examples/output2.txt`.
+
+
+
+## Autor
+
+Daniel Bednarski Ramos
+
+[https://www.astro.iag.usp.br/~bednarski](https://www.astro.iag.usp.br/~bednarski)
+
+daniel.bednarski.ramos@gmail.com
+
+
+## Licença
+
+GNU GPLv3

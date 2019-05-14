@@ -1,0 +1,6 @@
+crawlers/*.pyc
+build
+crawlers.egg-info
+dist
+.git
+crawlers/__pycache__/
