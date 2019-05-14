@@ -11,16 +11,16 @@ This script can be called by the following code (in terminal):
 
 .. code:: bash
 
-    $ redditTerm.py [-h] [--18+] subredds
+    $ redditTerm.py [-h] [--filter_18] subredds
 
 Parameters:
 
 
-  * ``subredds``:         list of subreddits separeted by semicolons (;)
+  * ``subredds``:                list of subreddits separeted by semicolons (;)
 
-  * ``-h``, ``--help``:   show the help message
-
-  * ``--18+``:            shows results classified as 18+? (Default: true)
+  * ``-h``, ``--help``:          show the help message
+ 
+  * ``-18``, ``--filter_18``:    filter threads classified as 18+ (Default: False)
    
    
 

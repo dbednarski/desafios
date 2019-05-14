@@ -48,15 +48,15 @@
 <p>Script to show the trending threads of subreddits of Reddit in a terminal. It implements the classes of <cite>crawlers</cite> module,
 considering the trending threads those which have more than 5000 upvotes amongst the 25 hottest threads inside such subreddit.</p>
 <p>This script can be called by the following code (in terminal):</p>
-<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ redditTerm.py [-h] [--18+] subredds
+<div class="code bash highlight-default"><div class="highlight"><pre><span></span>$ redditTerm.py [-h] [--filter_18] subredds
 </pre></div>
 </div>
 <p>Parameters:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">subredds</span></code>:         list of subreddits separeted by semicolons (;)</li>
-<li><code class="docutils literal"><span class="pre">-h</span></code>, <code class="docutils literal"><span class="pre">--help</span></code>:   show the help message</li>
-<li><code class="docutils literal"><span class="pre">--18+</span></code>:            shows results classified as 18+? (Default: true)</li>
+<li><code class="docutils literal"><span class="pre">subredds</span></code>:                list of subreddits separeted by semicolons (;)</li>
+<li><code class="docutils literal"><span class="pre">-h</span></code>, <code class="docutils literal"><span class="pre">--help</span></code>:          show the help message</li>
+<li><code class="docutils literal"><span class="pre">-18</span></code>, <code class="docutils literal"><span class="pre">--filter_18</span></code>:    filter threads classified as 18+ (Default: False)</li>
 </ul>
 </div></blockquote>
 </div>

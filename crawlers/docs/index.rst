@@ -10,5 +10,4 @@ Welcome to RedditCrawlers's documentation!
    :maxdepth: 3
    
    crawlers
-   
    scripts
