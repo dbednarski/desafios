@@ -1,6 +1,6 @@
-crawlers/*.pyc
+beautytext/*.pyc
 build
-crawlers.egg-info
+beautytext.egg-info
 dist
 .git
-crawlers/__pycache__/
+beautytext/__pycache__/
