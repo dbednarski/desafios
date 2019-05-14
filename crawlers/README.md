@@ -1,4 +1,4 @@
-# Crawlers
+# RedditCrawlers
 
 This package provide tools to explore the trending threads of [Reddit](#reddit). The core is composed by the Python module ``crawlers``, which can be used in implementations for many purposes. The package also includes two own scripts to search for the trending threads of subreddits: the first is to be runned in a terminal, and the second is an implementation of a "[Telegram Bot](#telegram)".
 
@@ -48,7 +48,7 @@ $ sudo python setup.py install
 # Using the features
 
 
-## ``crawlers`` module
+## crawlers module
 
 The entire documentation of ``crawlers`` module can be found in [https://desafios.readthedocs.io](https://desafios.readthedocs.io). After installed, you can import any of the two classes -- or the full module. The recommended way:
 
