@@ -29,7 +29,7 @@ if sys.argv[-1] == "publish":
 setup(name='crawlers',
     version='0.1',
     description=('A tool to monitor the trendings of Reddit'),
-    url='https://github.com/dbednarski/idwall/',
+    url='https://github.com/dbednarski/desafios/tree/master/crawlers',
     author='Daniel Bednarski',
     author_email='daniel.bednarski.ramos@gmail.com',
     license='GNU GPLv3.0',      
@@ -49,6 +49,6 @@ setup(name='crawlers',
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 3",
     ],
-    keywords=['reddit', 'crawlers', 'trending', 'subreddit', 'Be stars'],
+    keywords=['reddit', 'crawlers', 'trending', 'subreddit'],
     zip_safe=True
 )
