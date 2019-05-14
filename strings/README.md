@@ -1,6 +1,6 @@
 # FITTEXT
 
-Este é um pacote usado para a formatação de textos - em especial, limitação de caracteres por linhas. É composto por composto por um módulo Python `BeautyText` e por um script executável que o implementa.
+Este é um pacote usado para a formatação de textos - em especial, limitação de caracteres por linhas. É composto pelo módulo Python `BeautyText` e por um script executável que o implementa.
 
 ### Estrutura de diretórios
 
@@ -13,14 +13,14 @@ Este é um pacote usado para a formatação de textos - em especial, limitação
 ## Instalação
 
 
-Primeiramente, escolha se deseja instalar localmente (apenas para seu usuário) ou em todo o sistema. Abra a janela de um terminal e, a partir do diretório raiz deste pacote, digite, para instalar localmente:
+Primeiramente, escolha se deseja instalar localmente (apenas para seu usuário) ou em todo o sistema. Abra um terminal e, a partir do diretório raiz deste pacote:
 
+* Para instalar localmente, execute o comando:
 ```
 $ python setup.py install --user
 ```
 
-Para instalar em todo o sistema:
-
+* Para instalar em todo o sistema, execute o comando:
 ```
 $ sudo python setup.py install
 ```
@@ -71,21 +71,21 @@ Ao finalizado o script, é retornado um código padrão de status para o sistema
 
 ## Usabilidade
 
-Tanto os métodos `getBeautyText()` e `saveBeautyText()`, quanto para o script `fitText.py` só funcionarão corretamente se as seguintes observações forem levadas em conta:
+Tanto os métodos `getBeautyText()` e `saveBeautyText()` da classe `BeautyText`, quanto para o script `fitText.py` só funcionarão corretamente se as seguintes observações forem levadas em conta:
 
-* Os parágrafos devem ser separados no arquivo por uma linha em branco. Apenas uma quebra de linha é tratada como continuação do mesmo parágrafo.
-* A barra invertida procedida por um espaço ("\ ") pode ser usada para explicitar que conteúdos que não devem ser separados de linha. Exemplo:
-    > Pelo Teorema de Pitágoras, a soma dos quadrados dos catetos é igual ao quadrado da hipotenusa, ou seja, a²\ =\ b²\ +\ c².
+* Os parágrafos devem ser separados no arquivo por uma linha em branco. Uma quebra de linha simples é tratada como continuação do mesmo parágrafo.
+* A barra invertida procedida por um espaço ("\ ") pode ser usada para explicitar conteúdos que não devem ser separados de linha. Exemplo:
+    > O Teorema de Pitágoras diz que a soma dos quadrados dos catetos é igual ao quadrado da hipotenusa, ou seja, c²\ =\ a²\ +\ b².
 
   previne que a fórmula matemática se separe em duas linhas. O resultado após rodar o script fica:
 
-    > Pelo Teorema de Pitágoras, a soma dos
+    > O Teorema de Pitágoras diz que a soma
     >
-    > quadrados  dos  catetos  é  igual  ao
+    > dos quadrados dos catetos é igual ao
     >
-    > quadrado   da  hipotenusa,  ou  seja,
+    > quadrado da hipotenusa, ou  seja,
     >
-    > a² = b² + c².
+    > c² = a² + b².
 
 
 # Testes
