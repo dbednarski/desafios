@@ -50,12 +50,12 @@ $ sudo python setup.py install
 
 ## ``crawlers`` module
 
-The entire documentation of ``crawlers`` module can be found in [./docs/_build/html/index.html](./docs/_build/html/index.html). After installed, you can import any of the two classes -- or the full module. The recommended way:
+The entire documentation of ``crawlers`` module can be found in [https://desafios.readthedocs.io](https://desafios.readthedocs.io). After installed, you can import any of the two classes -- or the full module. The recommended way:
 
-'''
+```
 from crawlers.Reddit import Reddit
 from crawlers.RedditPrinter import RedditPrinter
-'''
+```
 
 
 ## The scripts
