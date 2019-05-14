@@ -70,7 +70,7 @@ class BeautyText:
                 self.__text = [li.replace("\n","") for li in f.readlines()]
         except:
             if self.verbose:
-                print("ERROR: \"{}\" is not a text file or is not readable.".format(args["file"]))
+                print("ERROR: \"{}\" is not a text file or is not readable.".format(path))
             return False
             
         return True
