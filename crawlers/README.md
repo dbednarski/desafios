@@ -63,11 +63,9 @@ from crawlers.RedditPrinter import RedditPrinter
 The following scripts can be called from any directory:
 
 * `redditTerm.py`: Script to show the trending threads of subreddits of Reddit in a terminal. This script is called by the following code:
-
     ```
     $ redditTerm.py [-h] [-18] subredds
     ```
-
     Parameters:
         * `subredds`:            list of subreddits separated by semicolons (;) (as ';' is a special
                                  character, you have to put your list among quotations ("")
