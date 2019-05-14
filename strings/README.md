@@ -77,15 +77,15 @@ Tanto os métodos `getBeautyText()` e `saveBeautyText()`, quanto para o script `
 * A barra invertida procedida por um espaço ("\ ") pode ser usada para explicitar que conteúdos que não devem ser separados de linha. Exemplo:
     > Pelo Teorema de Pitágoras, a soma dos quadrados dos catetos é igual ao quadrado da hipotenusa, ou seja, a²\ =\ b²\ +\ c².
 
-  previne que a fórmula matemática se separe em duas linhas. O resultado fica:
+  previne que a fórmula matemática se separe em duas linhas. O resultado após rodar o script fica:
 
     > Pelo Teorema de Pitágoras, a soma dos
-
+    >
     > quadrados  dos  catetos  é  igual  ao
-
+    >
     > quadrado   da  hipotenusa,  ou  seja,
-
-    > a²\ =\ b²\ +\ c².
+    >
+    > a² = b² + c².
 
 
 # Testes
