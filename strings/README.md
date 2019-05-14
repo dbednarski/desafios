@@ -76,10 +76,15 @@ Tanto os métodos `getBeautyText()` e `saveBeautyText()`, quanto para o script `
 * Os parágrafos devem ser separados no arquivo por uma linha em branco. Apenas uma quebra de linha é tratada como continuação do mesmo parágrafo.
 * A barra invertida procedida por um espaço ("\ ") pode ser usada para explicitar que conteúdos que não devem ser separados de linha. Exemplo:
     > Pelo Teorema de Pitágoras, a soma dos quadrados dos catetos é igual ao quadrado da hipotenusa, ou seja, a²\ =\ b²\ +\ c².
+
   previne que a fórmula matemática se separe em duas linhas. O resultado fica:
+
     > Pelo Teorema de Pitágoras, a soma dos
+
     > quadrados  dos  catetos  é  igual  ao
+
     > quadrado   da  hipotenusa,  ou  seja,
+
     > a²\ =\ b²\ +\ c².
 
 
