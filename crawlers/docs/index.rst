@@ -7,7 +7,8 @@ Welcome to RedditCrawlers's documentation!
 ==========================================
 
 .. toctree::
-   :maxdepth: 3:
+   :maxdepth: 3
    
    crawlers
+   
    scripts
