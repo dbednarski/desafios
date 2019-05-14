@@ -69,11 +69,13 @@ $ redditTerm.py [-h] [-18] subredds
 ```
 
     Parameters:
-        * `subredds`:            list of subreddits separated by semicolons (;) (as ';' is a special character, you have to put your list among quotations ("")
+        * `subredds`:            list of subreddits separated by semicolons (;) (as ';' is a special
+                                 character, you have to put your list among quotations ("")
         * `-h`, `--help`:        show the help message
         * `-18`, `--filter_18`:  filter threads classified as 18+ (Default: False)
 
 * `redditBot.py`: Script of the Telegram Bot. That Bot allows the people to run a similar code to the `redditTerm.py`  from the Telegram. To allow it, this code must be running in some local computer, or local or remote server. To run in background:
+
 ```
 $ redditBot.py &
 ```
