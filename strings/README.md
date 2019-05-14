@@ -86,6 +86,16 @@ Tanto os métodos `getBeautyText()` e `saveBeautyText()` da classe `BeautyText`,
     > quadrado da hipotenusa, ou  seja,
     >
     > c² = a² + b².
+    
+  Sem as barras invertidas no texto de entrada, a saída ficaria
+
+    > O Teorema de Pitágoras diz que a soma
+    >
+    > dos quadrados dos catetos é igual ao
+    >
+    > quadrado da hipotenusa, ou seja, c² = a²
+    >
+    > + b².
 
 
 # Testes
