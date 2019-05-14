@@ -73,10 +73,9 @@ The following scripts can be called from any directory:
     - `-18`, `--filter_18`:  filter threads classified as 18+ (Default: False)
 
 * `redditBot.py`: Script of the Telegram Bot. That Bot allows the people to run a similar code to the `redditTerm.py`  from the Telegram. To allow it, this code must be running in some local computer, or local or remote server. To run in background:
-
-```
-$ redditBot.py &
-```
+    ```
+    $ redditBot.py &
+    ```
 
 ### Output
 
