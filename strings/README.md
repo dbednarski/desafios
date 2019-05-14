@@ -1,4 +1,4 @@
-# FITTEXT
+# BeautyText
 
 Este é um pacote usado para a formatação de textos - em especial, limitação de caracteres por linhas. É composto pelo módulo Python `BeautyText` e por um script executável que o implementa.
 
