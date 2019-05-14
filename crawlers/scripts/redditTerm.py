@@ -28,7 +28,7 @@ def parseArguments():
     parser.add_argument("subredds", help="List of subreddits separeted by semicolons (;)", type=str)
 
     # Optional arguments
-    parser.add_argument("--18+", help="Shows threads classified as 18+? (Default: true)", default=True, action="store_true")
+    parser.add_argument("-18", "--filter_18", help="Filter threads classified as 18+", default=False, action="store_true")
 
     args = parser.parse_args()
 
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     args = parseArguments()
 
     # Uses RedditPrinter class from crawlers module
-    printer = RedditPrinter(args.__dict__["subredds"].split(";"))
+    printer = RedditPrinter(args.__dict__["subredds"].split(";"), filter_18=args.__dict__["filter_18"])
     printer.printCrawlers()
     
 

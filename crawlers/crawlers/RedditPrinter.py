@@ -46,7 +46,7 @@ class RedditPrinter:
             printings += "="*num + "\n==  " + subredd.upper() + "  ==\n" + "="*num + "\n"
 
             obj = Reddit(subredd)
-            url = obj.subreddUrl()
+            url = obj.getSubreddUrl()
             crawlers = obj.crawlers()
             
             # Case some error on access subreddit page
