@@ -95,7 +95,7 @@ Tanto os métodos `getBeautyText()` e `saveBeautyText()` da classe `BeautyText`,
     >
     > quadrado da hipotenusa, ou seja, c² = a²
     >
-    > + b².
+    > \+ b².
 
 
 # Testes
