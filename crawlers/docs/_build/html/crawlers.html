@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>crawlers module &#8212; RedditCrawlers 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="RedditCrawlers 0.1 documentation" href="index.html" />
+    <link rel="next" title="scripts" href="scripts.html" />
+    <link rel="prev" title="Welcome to RedditCrawlers’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-crawlers">
+<span id="crawlers-module"></span><h1>crawlers module<a class="headerlink" href="#module-crawlers" title="Permalink to this headline">¶</a></h1>
+<p>This is a simple module composed just by two classes:</p>
+<ul class="simple">
+<li>Reddit class;</li>
+<li>RedditPrinter class.</li>
+</ul>
+<div class="section" id="crawlers-reddit-class">
+<h2>crawlers.Reddit class<a class="headerlink" href="#crawlers-reddit-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawlers.Reddit">
+<em class="property">class </em><code class="descclassname">crawlers.</code><code class="descname">Reddit</code><span class="sig-paren">(</span><em>subredd</em><span class="sig-paren">)</span><a class="headerlink" href="#crawlers.Reddit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for subreddit crawlers.</p>
+<dl class="attribute">
+<dt id="crawlers.Reddit.subredd">
+<code class="descname">subredd</code><a class="headerlink" href="#crawlers.Reddit.subredd" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>str</em> &#8211; The name of the subreddit.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawlers.Reddit.crawlers">
+<code class="descname">crawlers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crawlers.Reddit.crawlers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search informations about the subreddit <em>subredd</em>, retorning
+informations about the trending threads.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">In case of some error, returns a <code class="xref py py-obj docutils literal"><span class="pre">None</span></code> object.
+In success, returns a <code class="xref py py-obj docutils literal"><span class="pre">list</span> <span class="pre">of</span> <span class="pre">dictionaries</span></code>. The dictionaries are concerning to
+each trending thread found, sorted by score (descending order). Their keys values are:<blockquote>
+<div><ul class="simple">
+<li><em>title</em> - title of the thread.</li>
+<li><em>ups</em> - number of up votes of the thread.</li>
+<li><em>downs</em> - number of down votes of the thread.</li>
+<li><em>num_comments</em> - number of comments of the thread.</li>
+<li><em>over_18</em> - boolean indicating if is a 18+ thread.</li>
+<li><em>thread_url</em> - url to the comments of the thread.</li>
+<li><em>link_url</em> - url of the subject of the thread.</li>
+</ul>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">list</span></code> | <code class="xref py py-obj docutils literal"><span class="pre">None</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="crawlers.Reddit.filter_18">
+<code class="descname">filter_18</code><em class="property"> = False</em><a class="headerlink" href="#crawlers.Reddit.filter_18" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter 18+ threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawlers.Reddit.getSubredd">
+<code class="descname">getSubredd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crawlers.Reddit.getSubredd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the <em>subredd</em> atribute value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the value of <em>subredd</em> atribute.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawlers.Reddit.getSubreddUrl">
+<code class="descname">getSubreddUrl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crawlers.Reddit.getSubreddUrl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the subreddit url.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Subreddit URL.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="crawlers.Reddit.limit">
+<code class="descname">limit</code><em class="property"> = 25</em><a class="headerlink" href="#crawlers.Reddit.limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit of threads to sweep inside each subreddit.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="crawlers.Reddit.min_upvotes">
+<code class="descname">min_upvotes</code><em class="property"> = 5000</em><a class="headerlink" href="#crawlers.Reddit.min_upvotes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Min of upvotes to be considerated a trending thread.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="crawlers.Reddit.verbose">
+<code class="descname">verbose</code><em class="property"> = True</em><a class="headerlink" href="#crawlers.Reddit.verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print error messages.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="crawlers-redditprinter-class">
+<h2>crawlers.RedditPrinter class<a class="headerlink" href="#crawlers-redditprinter-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="crawlers.RedditPrinter">
+<em class="property">class </em><code class="descclassname">crawlers.</code><code class="descname">RedditPrinter</code><span class="sig-paren">(</span><em>subredds</em>, <em>limit=25</em>, <em>min_upvotes=5000</em>, <em>filter_18=False</em><span class="sig-paren">)</span><a class="headerlink" href="#crawlers.RedditPrinter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class of Reddit Crawlers Printer.</p>
+<dl class="attribute">
+<dt id="crawlers.RedditPrinter.subredds">
+<code class="descname">subredds</code><a class="headerlink" href="#crawlers.RedditPrinter.subredds" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">list</span></code> &#8211; An array of strings (subrreds).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="crawlers.RedditPrinter.limit">
+<code class="descname">limit</code><a class="headerlink" href="#crawlers.RedditPrinter.limit" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int, optional</em> &#8211; Limit of threads to sweep inside each subreddit.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="crawlers.RedditPrinter.min_upvotes">
+<code class="descname">min_upvotes</code><a class="headerlink" href="#crawlers.RedditPrinter.min_upvotes" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int, optional</em> &#8211; Min of upvotes to be considerated a trending thread.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="crawlers.RedditPrinter.filter_18">
+<code class="descname">filter_18</code><a class="headerlink" href="#crawlers.RedditPrinter.filter_18" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>bool, optional</em> &#8211; Filter 18+ threads.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawlers.RedditPrinter.getCrawlers">
+<code class="descname">getCrawlers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crawlers.RedditPrinter.getCrawlers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a printable string of the trending threads (crawlers) found for the <em>subredds</em> attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">printable string of trending threads</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-obj docutils literal"><span class="pre">str</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="crawlers.RedditPrinter.printCrawlers">
+<code class="descname">printCrawlers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#crawlers.RedditPrinter.printCrawlers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the trending threads (crawlers) found for the <em>subredds</em> attribute</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">crawlers module</a><ul>
+<li><a class="reference internal" href="#crawlers-reddit-class">crawlers.Reddit class</a></li>
+<li><a class="reference internal" href="#crawlers-redditprinter-class">crawlers.RedditPrinter class</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to RedditCrawlers&#8217;s documentation!</a></li>
+      <li>Next: <a href="scripts.html" title="next chapter">scripts</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/crawlers.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Daniel Bednarski.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/crawlers.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

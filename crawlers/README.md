@@ -1,31 +1,110 @@
-# Desafio 2: Crawlers
+# Crawlers
 
-Parte do trabalho na IDwall inclui desenvolver *crawlers/scrapers* para coletar dados de websites.
-Como nós nos divertimos trabalhando, às vezes trabalhamos para nos divertir!
+This package provide tools to explore the trending threads of [Reddit](#reddit). The core is composed by the Python module ``crawlers``, which can be used in implementations for many purposes. The package also includes two own scripts to search for the trending threads of subreddits: the first is to be runned in a terminal, and the second is an implementation of a "[Telegram Bot](#telegram)".
 
-O Reddit é quase como um fórum com milhares de categorias diferentes. Com a sua conta, você pode navegar por assuntos técnicos, ver fotos de gatinhos, discutir questões de filosofia, aprender alguns life hacks e ficar por dentro das notícias do mundo todo!
 
-Subreddits são como fóruns dentro do Reddit e as postagens são chamadas *threads*.
+### Reddit
 
-Para quem gosta de gatos, há o subreddit ["/r/cats"](https://www.reddit.com/r/cats) com threads contendo fotos de gatos fofinhos.
-Para *threads* sobre o Brasil, vale a pena visitar ["/r/brazil"](https://www.reddit.com/r/brazil) ou ainda ["/r/worldnews"](https://www.reddit.com/r/worldnews/).
-Um dos maiores subreddits é o "/r/AskReddit".
+The [Reddit](https://www.reddit.com) is a kind of forum with thousands of categories, the called *subreddits*. In each *subreddit* there are other thousands of *threads*. Each *thread* has a score, which is computed by the "up votes" minus the "down votes".
 
-Cada *thread* possui uma pontuação que, simplificando, aumenta com "up votes" (tipo um like) e é reduzida com "down votes".
+### Telegram
 
-Sua missão é encontrar e listar as *threads* que estão bombando no Reddit naquele momento!
-Consideramos como bombando *threads* com 5000 pontos ou mais.
+The [Telegram](http://telegram.org) is a OpenSource and cloud-based instant messaging service, whose cryptography makes it one of the most secure messaging app. Telegram provides two API for developers make use in their codes and programs.
 
-## Entrada
-- Lista com nomes de subreddits separados por ponto-e-vírgula (`;`). Ex: "askreddit;worldnews;cats"
+Telegram supports a kind of account called *Bot*. It can be used to run programs and scripts inside the Telegram clients (app, browsers, etc). For example, [YTranslateBot](https://telegram.me/YTranslateBot) is a *Bot* that translate text among many languages.
 
-### Parte 1
-Gerar e imprimir uma lista contendo número de upvotes, subreddit, título da thread, link para os comentários da thread, link da thread.
-Essa parte pode ser um CLI simples, desde que a formatação da impressão fique legível.
 
-### Parte 2
-Construir um robô que nos envie essa lista via Telegram sempre que receber o comando `/NadaPraFazer [+ Lista de subrredits]` (ex.: `/NadaPraFazer programming;dogs;brazil`)
+## File structure
 
-### Dicas
- - Use https://old.reddit.com/
- - Qualquer método para coletar os dados é válido. Caso não saiba por onde começar, procure por JSoup (Java), SeleniumHQ (Java), PhantomJS (Javascript) e Beautiful Soup (Python).
+* `docs` -- directory of documentation
+* `crawlers` -- directory of module ``crawlers``
+* `scripts` -- directory of scripts
+
+
+## Installation
+
+First, go to the root directory of the package. Now you must to choose if you will install RedditCrowlers only for your user, or in entire system. In case of the fist option, run:
+
+    '''
+    $ python setup.py install --user
+    '''
+
+otherwise, you must have admin privileges:
+    '''
+    $ sudo python setup.py install
+    '''
+
+### Requirements
+
+* Python >= 2.7
+* [setuptools](https://pypi.org/project/setuptools)
+* [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
+* [requests](https://github.com/requests/requests)
+* [numpy](https://www.numpy.org/)
+
+
+
+# Using the features
+
+
+## ``crawlers`` module
+
+The entire documentation of ``crawlers`` module can be found in [./docs/_build/html/index.html](./docs/_build/html/index.html). After installed, you can import any of the two classes -- or the full module. The recommended way:
+
+'''
+from crawlers.Reddit import Reddit
+from crawlers.RedditPrinter import RedditPrinter
+'''
+
+
+## The scripts
+
+The following scripts can be called from any directory:
+
+* `redditTerm.py`: Script to show the trending threads of subreddits of Reddit in a terminal. This script is called by the following code:
+    '''
+    $ redditTerm.py [-h] [--18+] subredds
+    '''
+    Parameters:
+        * ``subredds``:         list of subreddits separated by semicolons (;) (as ';' is a special character, you have to put your list among quotations ("")
+        * ``-h``, ``--help``:   show the help message
+        * ``--18+``:            shows results classified as 18+? (Default: true)
+* `redditBot.py`: Script of the Telegram Bot. That Bot allows the people to run a similar code to the ``redditTerm.py``  from the Telegram. To allow it, this code must be running in some local computer, or local or remote server. To run in background:
+    '''
+    $ redditBot.py &
+    '''
+
+### Output
+
+The main output of both scripts is the information about all the *threads* of each subreddit passed as input that:
+
+1. have more than 5000 up votes; and
+2. be among the 25 *hottest* threads (classified by the Reddit).
+
+
+
+### Accessing and using the RedditBot
+
+The *bot* [RedditBot](https://telegram.me/DanBedBot) was created to response the requests sent to the Telegram API, and redirected to the `redditBot.py`. This script must be running for the communication working.
+
+In link above, click in *Send Message* to invite the RedditBot for our Telegram. Only there exist two commands for RedditBot:
+
+* `/start`
+  Prints the help message.
+
+* `/NadaPraFazer *subredds*`
+  The behavior is the same those when `redditTerm.py` is runned in a terminal. But now the messages are printed in Telegram Bot chat. `*subbreds*` is the same one parameter from `redditTerm.py`: a list of subreddits separated by semicolons (;).
+
+
+## Author
+
+Daniel Bednarski Ramos
+
+[http://www.astro.iag.usp.br/~bednarski](https://www.astro.iag.usp.br/~bednarski)
+
+daniel.bednarski.ramos@gmail.com
+
+
+## License
+
+GNU GPLv3
